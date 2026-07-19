@@ -79,6 +79,10 @@ echo ""
 echo "[FINALIZING]"
 cd "$OPENPLC_DIR"
 
+# Apply completed locale overrides (kept in this repo; editor is a submodule).
+chmod +x "$OPENPLC_DIR/apply_i18n_overrides.sh"
+"$OPENPLC_DIR/apply_i18n_overrides.sh"
+
 echo -e "#!/bin/bash\n\
 cd \"$OPENPLC_DIR\"\n\
 if [ -d \"./new_editor\" ]\n\
@@ -88,6 +92,7 @@ then\n\
     mv ./new_editor ./editor\n\
     mv ./new_lib ./matiec/lib\n\
 fi\n\
+\"$OPENPLC_DIR/apply_i18n_overrides.sh\"\n\
 source \"$VENV_DIR/bin/activate\"\n\
 export GDK_BACKEND=x11\n\
 ./.venv/bin/python3 ./editor/Beremiz.py" > openplc_editor.sh
