@@ -18,19 +18,11 @@ OpenPLCEditor 用户手册说明如何使用应用程序 OpenPLCEditor。
 为正确理解本文档，至少需要了解 LPC 硬件的基本知识。为此，强烈建议观看 LPC Getting Started 视频（随 LPC Smarteh IDE 安装包一并安装），或参加由经认证的 SMARTEH d.o.o. 培训师提供的正式培训。
 在该短期课程中，您将学习全部基础内容，并有机会成为经认证的 SMARTEH d.o.o. 集成商。您不仅能抢先掌握要点，还将加入不断壮大的 LPC 用户群体，有机会直接向专家提问，并与世界各地的其他集成商及公司建立联系……
 注意：由于 OpenPLCEditor 基于 IEC 61131-3 国际标准，更详细的信息请参阅 PLC（可编程逻辑控制器）编程语言国际标准 IEC 61131-3。
-如需了解更多信息，请致电 +386 5 388 44 00，或发送电子邮件至 info@smarteh.si，预约 LPC 认证培训名额。
 
 ## 1.2 术语
 本手册通篇使用多种表述。以下为其中部分术语的说明。
 
-### 1.2.1 基于 LPC 系列产品的术语
-LONGO™ — 产品系列（硬件与软件）名称，为 SMARTEH d.o.o. 的商标。
-LPC™ — Longo Programming Controller（Longo 可编程控制器），为 SMARTEH d.o.o. 的商标。
-IDE — 集成开发环境（Integrated Development Environment）。
-LPC-2 Programming Controller — 硬件模块系列（MCU 模块、I/O 模块及其他模块）。
-LPC Smarteh IDE、OpenPLCEditor — 属于 LPC 系列软件成员。
-
-### 1.2.2 基于 OpenPLCEditor 的术语
+### 1.2.1 基于 OpenPLCEditor 的术语
 Beremiz — 面向自动化的自由软件框架（http://www.beremiz.org）
 IEC 61131-3 — 可编程控制器及编程语言的国际标准
 PLC — Programmable Logic Controller（可编程逻辑控制器）
@@ -45,7 +37,7 @@ SFC — Sequential Function Chart（顺序功能图）
 True — 逻辑 1，接通，有效，高电平状态
 False — 逻辑 0，断开，无效，低电平状态
 
-### 1.2.3 本文档所用约定
+### 1.2.2 本文档所用约定
 本文档中出现的部分内容会以特殊外观呈现，以便与正文区分。具体如下：
 斜体 — 用于标注重要关键词。
 NEW: — 用于标注相对先前版本变更最多的章节。
