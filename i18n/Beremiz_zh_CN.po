@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the Beremiz package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Andrey Skvortsov <andrej.skvortzov@gmail.com>, 2017
 # Tango_Wu <wuyangtang@live.com>, 2017
@@ -10,20 +10,19 @@
 # frank guan <gpfrank@163.com>, 2019
 # ji wang <2485567515@qq.com>, 2019
 # 珂 曾 <15627997@qq.com>, 2019
-# 
-#, fuzzy
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Beremiz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-03 14:20+0300\n"
-"PO-Revision-Date: 2017-06-13 13:14+0000\n"
-"Last-Translator: 珂 曾 <15627997@qq.com>, 2019\n"
+"PO-Revision-Date: 2026-07-19 09:04+0000\n"
+"Last-Translator: Cursor Agent <cursor@cursor.com>, 2026\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/beremiz/teams/75746/zh_CN/)\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../util/ExceptionHandler.py:58
@@ -1932,7 +1931,7 @@ msgstr "文件 '%s' 已经存在！"
 
 #: ../runtime/WampClient.py:407
 msgid "File containing secret for that ID"
-msgstr ""
+msgstr "包含该 ID 密钥的文件"
 
 #: ../dialogs/SearchInProjectDialog.py:102 ../dialogs/FindInPouDialog.py:40
 #: ../dialogs/FindInPouDialog.py:107 ../IDEFrame.py:380
@@ -2154,11 +2153,11 @@ msgstr "初始值："
 
 #: ../etherlab/EthercatCIA402Slave.py:119
 msgid "Initiate Drag'n drop of Axis ref located variable"
-msgstr ""
+msgstr "开始拖放轴引用定位变量"
 
 #: ../etherlab/EthercatCIA402Slave.py:126
 msgid "Initiate Drag'n drop of Network position located variable"
-msgstr ""
+msgstr "开始拖放网络位置定位变量"
 
 #: ../dialogs/SFCTransitionDialog.py:77 ../dialogs/ActionBlockDialog.py:47
 msgid "Inline"
@@ -2234,13 +2233,13 @@ msgstr "无效值 \"%s\" 为调试变量"
 #: ../etherlab/ConfigEditor.py:452
 #, python-format
 msgid "Invalid value \"%s\" for process variable"
-msgstr ""
+msgstr "过程变量的值 \"%s\" 无效"
 
 #: ../etherlab/ConfigEditor.py:480 ../etherlab/ConfigEditor.py:483
 #: ../etherlab/ConfigEditor.py:504
 #, python-format
 msgid "Invalid value \"%s\" for startup command"
-msgstr ""
+msgstr "启动命令的值 \"%s\" 无效"
 
 #: ../controls/VariablePanel.py:278 ../controls/VariablePanel.py:281
 #, python-format
@@ -2260,7 +2259,7 @@ msgstr "无效值 \"{a1}\" 对于 \"{a2}\" 变量！"
 #: ../etherlab/CommonEtherCATFunction.py:31
 #, python-format
 msgid "Invalid value for HexDecValue \"%s\""
-msgstr ""
+msgstr "HexDecValue 的值 \"%s\" 无效"
 
 #: ../dialogs/DurationEditorDialog.py:125
 msgid ""
@@ -2372,7 +2371,7 @@ msgstr "存在的定位："
 
 #: ../runtime/NevowServer.py:175
 msgid "Log message level"
-msgstr ""
+msgstr "日志消息级别"
 
 #: ../plcopen/iec_std.csv:25
 msgid "Logarithm to base 10"
@@ -2385,7 +2384,7 @@ msgstr "MDNS 解析度失败因为 '%s'\n"
 
 #: ../etherlab/ConfigEditor.py:67
 msgid "Manufacturer Specific"
-msgstr ""
+msgstr "制造商特定"
 
 #: ../canfestival/SlaveEditor.py:68 ../canfestival/NetworkEditor.py:92
 msgid "Map Variable"
@@ -2393,7 +2392,7 @@ msgstr "映射变量"
 
 #: ../features.py:19
 msgid "Map located variables over Bacnet"
-msgstr ""
+msgstr "通过 BACnet 映射定位变量"
 
 #: ../features.py:18
 msgid "Map located variables over CANopen"
@@ -2401,7 +2400,7 @@ msgstr "通过CANopen映射位置变量"
 
 #: ../features.py:20
 msgid "Map located variables over EtherCAT"
-msgstr ""
+msgstr "通过 EtherCAT 映射定位变量"
 
 #: ../features.py:21
 msgid "Map located variables over Modbus"
@@ -2429,6 +2428,8 @@ msgid ""
 "Maximal number of entries mapped in a PDO\n"
 "including empty entries used for PDO alignment"
 msgstr ""
+"PDO 中映射的最大条目数\n"
+"包括用于 PDO 对齐的空条目"
 
 #: ../plcopen/iec_std.csv:71
 msgid "Maximum"
@@ -2466,7 +2467,7 @@ msgstr "毫秒："
 
 #: ../etherlab/etherlab.py:167
 msgid "Minimal size in bits between 2 pdo entries"
-msgstr ""
+msgstr "两个 PDO 条目之间的最小位数"
 
 #: ../plcopen/iec_std.csv:72
 msgid "Minimum"
@@ -2542,11 +2543,11 @@ msgstr "上移实例"
 
 #: ../etherlab/ConfigEditor.py:655
 msgid "Move process variable down"
-msgstr ""
+msgstr "下移过程变量"
 
 #: ../etherlab/ConfigEditor.py:654
 msgid "Move process variable up"
-msgstr ""
+msgstr "上移过程变量"
 
 #: ../editors/ResourceEditor.py:253
 msgid "Move task down"
@@ -2712,12 +2713,12 @@ msgstr "没有存在的搜索结果。"
 #: ../etherlab/ConfigEditor.py:1029
 #, python-format
 msgid "No slave defined at position %d!"
-msgstr ""
+msgstr "位置 %d 未定义从站！"
 
 #: ../etherlab/ConfigEditor.py:1245
 #, python-format
 msgid "No such XML file: %s\n"
-msgstr ""
+msgstr "没有这样的 XML 文件：%s\n"
 
 #: ../canfestival/config_utils.py:682
 #, python-brace-format
@@ -3950,7 +3951,7 @@ msgstr "未定义块类型 \"{a1}\" 在 \"{a2}\" POU中"
 #: ../PLCGenerator.py:261
 #, python-format
 msgid "Undefined pou type \"%s\""
-msgstr "未定义的pou类型"
+msgstr "未定义的 pou 类型 \"%s\""
 
 #: ../IDEFrame.py:368 ../IDEFrame.py:424
 msgid "Undo"
@@ -4044,7 +4045,7 @@ msgstr "变量不属于这个POU！"
 
 #: ../etherlab/ConfigEditor.py:280
 msgid "Variable entries:"
-msgstr ""
+msgstr "变量条目："
 
 #: ../dialogs/LDElementDialog.py:92
 msgid "Variable:"
@@ -4074,15 +4075,15 @@ msgstr "WAMP ID:"
 
 #: ../runtime/WampClient.py:413
 msgid "WAMP Server URL"
-msgstr ""
+msgstr "WAMP 服务器 URL"
 
 #: ../runtime/WampClient.py:276
 msgid "WAMP authentication has no secret configured"
-msgstr ""
+msgstr "WAMP 认证未配置密钥"
 
 #: ../runtime/WampClient.py:304
 msgid "WAMP client can not connect to :"
-msgstr ""
+msgstr "WAMP 客户端无法连接到："
 
 #: ../runtime/WampClient.py:301
 msgid "WAMP client connecting to :"
@@ -4094,11 +4095,11 @@ msgstr "WAMP客户端启动失败。"
 
 #: ../runtime/WampClient.py:206
 msgid "WAMP configuration error : missing '{}' parameter."
-msgstr ""
+msgstr "WAMP 配置错误：缺少 '{}' 参数。"
 
 #: ../runtime/WampClient.py:192
 msgid "WAMP configuration error:"
-msgstr ""
+msgstr "WAMP 配置错误："
 
 #: ../connectors/WAMP/__init__.py:100
 #, python-format
@@ -4116,7 +4117,7 @@ msgstr "WAMP 连接到 '%s' 失败。\n"
 
 #: ../runtime/WampClient.py:280
 msgid "WAMP deactivated in configuration"
-msgstr ""
+msgstr "配置中已禁用 WAMP"
 
 #: ../Beremiz_service.py:605
 msgid "WAMP import failed :"
@@ -4124,12 +4125,12 @@ msgstr "WAMP导入失败："
 
 #: ../runtime/WampClient.py:241
 msgid "WAMP secret empty"
-msgstr ""
+msgstr "WAMP 密钥为空"
 
 #: ../runtime/WampClient.py:139
 #, python-format
 msgid "WAMP session joined (%s) by:"
-msgstr ""
+msgstr "WAMP 会话已加入 (%s)，由："
 
 #: ../runtime/WampClient.py:146
 msgid "WAMP session left"
@@ -4141,7 +4142,7 @@ msgstr "WXGLADE 用户图形界面"
 
 #: ../runtime/WampClient.py:432
 msgid "Wamp Settings"
-msgstr ""
+msgstr "WAMP 设置"
 
 #: ../dialogs/PouDialog.py:172 ../editors/LDViewer.py:902
 msgid "Warning"
@@ -4156,7 +4157,7 @@ msgstr "警告"
 msgid ""
 "Warning: WxGlade HMI has no object with name identical to extension name, "
 "and no python code is provided in start section to create object.\n"
-msgstr ""
+msgstr "警告：WxGlade HMI 没有与扩展名相同的对象，且启动段中未提供用于创建对象的 Python 代码。\n"
 
 #: ../ProjectController.py:756
 msgid "Warnings in ST/IL/SFC code generator :\n"
