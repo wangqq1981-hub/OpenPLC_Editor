@@ -2,8 +2,8 @@
 用户手册
 USER MANUAL
 OpenPLC Editor 用户手册
-（原文为基于 Beremiz 的 LPC Manager / LONGO Programmable Controller）
-LPC Manager
+（原文为基于 Beremiz 的 OpenPLCEditor / LONGO Programmable Controller）
+OpenPLCEditor
 版本 4
 Written by SMARTEH d.o.o.
 Copyright © 2010-2016, SMARTEH d.o.o.
@@ -11,13 +11,13 @@ Copyright © 2010-2016, SMARTEH d.o.o.
 2016 年 1 月
 
 # 1 关于本文档
-LPC Manager 用户手册说明如何使用应用程序 LPC Manager。
+OpenPLCEditor 用户手册说明如何使用应用程序 OpenPLCEditor。
 
 ## 1.1 谁应阅读本文档
-如果您是 LPC Manager 软件的新用户，希望入门使用，或正从先前版本升级，则应阅读本文档。
+如果您是 OpenPLCEditor 软件的新用户，希望入门使用，或正从先前版本升级，则应阅读本文档。
 为正确理解本文档，至少需要了解 LPC 硬件的基本知识。为此，强烈建议观看 LPC Getting Started 视频（随 LPC Smarteh IDE 安装包一并安装），或参加由经认证的 SMARTEH d.o.o. 培训师提供的正式培训。
 在该短期课程中，您将学习全部基础内容，并有机会成为经认证的 SMARTEH d.o.o. 集成商。您不仅能抢先掌握要点，还将加入不断壮大的 LPC 用户群体，有机会直接向专家提问，并与世界各地的其他集成商及公司建立联系……
-注意：由于 LPC Manager 基于 IEC 61131-3 国际标准，更详细的信息请参阅 PLC（可编程逻辑控制器）编程语言国际标准 IEC 61131-3。
+注意：由于 OpenPLCEditor 基于 IEC 61131-3 国际标准，更详细的信息请参阅 PLC（可编程逻辑控制器）编程语言国际标准 IEC 61131-3。
 如需了解更多信息，请致电 +386 5 388 44 00，或发送电子邮件至 info@smarteh.si，预约 LPC 认证培训名额。
 
 ## 1.2 术语
@@ -28,9 +28,9 @@ LONGO™ — 产品系列（硬件与软件）名称，为 SMARTEH d.o.o. 的商
 LPC™ — Longo Programming Controller（Longo 可编程控制器），为 SMARTEH d.o.o. 的商标。
 IDE — 集成开发环境（Integrated Development Environment）。
 LPC-2 Programming Controller — 硬件模块系列（MCU 模块、I/O 模块及其他模块）。
-LPC Smarteh IDE、LPC Manager — 属于 LPC 系列软件成员。
+LPC Smarteh IDE、OpenPLCEditor — 属于 LPC 系列软件成员。
 
-### 1.2.2 基于 LPC Manager 的术语
+### 1.2.2 基于 OpenPLCEditor 的术语
 Beremiz — 面向自动化的自由软件框架（http://www.beremiz.org）
 IEC 61131-3 — 可编程控制器及编程语言的国际标准
 PLC — Programmable Logic Controller（可编程逻辑控制器）
@@ -50,17 +50,17 @@ False — 逻辑 0，断开，无效，低电平状态
 斜体 — 用于标注重要关键词。
 NEW: — 用于标注相对先前版本变更最多的章节。
 
-# 2 LPC MANAGER 软件
+# 2 OpenPLCEditor 软件
 ## 2.1 简介
-LPC Manager 软件（LONGO Programmable Controller Manager software）用于对 Smarteh 控制器的 LPC-2 系列进行编程。
-在 LPC Smarteh IDE 中创建配置后，可通过以下方式启动 LPC Manager：
+OpenPLCEditor 软件（LONGO Programmable Controller Manager software）用于对 Smarteh 控制器的 LPC-2 系列进行编程。
+在 LPC Smarteh IDE 中创建配置后，可通过以下方式启动 OpenPLCEditor：
 – 单击 Program（程序）按钮，或
-– 选择某个项目配置，然后单击 Program in LPC Manager（在 LPC Manager 中编程）命令行。
+– 选择某个项目配置，然后单击 Program in OpenPLCEditor（在 OpenPLCEditor 中编程）命令行。
 本软件基于 Beremiz 开源软件，并针对 Smarteh LPC 控制器进行适配，支持 IEC 61131-3 标准编程语言：IL（指令表）、ST（结构化文本）、LD（梯形图）、FBD（功能块图）和 SFC（顺序功能图）。
-LPC Manager 软件易于使用，并在 LPC 控制器应用软件的编程、调试、监视与趋势分析方面提供多种功能。
+OpenPLCEditor 软件易于使用，并在 LPC 控制器应用软件的编程、调试、监视与趋势分析方面提供多种功能。
 
-## 2.2 LPC Manager 编辑器
-LPC Manager 软件由以下部分组成：
+## 2.2 OpenPLCEditor 编辑器
+OpenPLCEditor 软件由以下部分组成：
 - 主菜单：File（文件）、Edit（编辑）、Display（显示）、Help（帮助）
 - 工具栏：Save（保存）、Print（打印）、Undo（撤销）、Redo（重做）、Cut（剪切）、Copy（复制）、Paste（粘贴）、Search in Project（在项目中搜索）；Simulate（仿真）、Debug（调试）；Select an object（选择对象）、Move the view（移动视图）、Create a new comment（创建新注释）、Create a new variable（创建新变量）、Create a new block（创建新功能块）、Create a new connection（创建新连接）
 - Topology（拓扑）与 Project（项目）窗口
@@ -77,7 +77,7 @@ Close Tab（关闭标签页） - 关闭当前打开的工作区。
 Page Setup（页面设置） - 设置打印页面。
 Preview（预览） - 工作区的打印预览。
 Print（打印） - 打印当前打开的工作区。
-Quit（退出） - 退出 LPC Manager。
+Quit（退出） - 退出 OpenPLCEditor。
 
 ### 2.3.2 Edit（编辑）
 Undo（撤销） - 撤销工作区中的上一次更改。
@@ -143,7 +143,7 @@ Devices（设备） - 智能外设模块变量
 On Board（板载） - MCU 板载变量。
 
 Build（构建） - Transfer（传送）流程：
-首次打开 LPC Manager 时（针对对应的 LPC Smarteh IDE 配置），Toolbar 2 中提供两个按钮：Simulate 与 Build。在 POU 内创建所需应用程序后，必须对该应用程序进行构建。此过程可在 Console 窗口中观察。若代码无错误，则会在项目文件夹中生成相应文件。
+首次打开 OpenPLCEditor 时（针对对应的 LPC Smarteh IDE 配置），Toolbar 2 中提供两个按钮：Simulate 与 Build。在 POU 内创建所需应用程序后，必须对该应用程序进行构建。此过程可在 Console 窗口中观察。若代码无错误，则会在项目文件夹中生成相应文件。
 下一步是将生成的二进制代码传送到 LPC-2 控制器；控制器须通过 USB 编程电缆（USB A 型公头转 USB B 型公头）连接到 USB 端口。此时 USB 连通性（蓝色）LED 点亮，Toolbar 2 中会增加 Transfer 按钮，并且 Simulate 变为 Stop。单击 Transfer 按钮，并在 LOG console 窗口中观察进度。若一切正常，将报告消息 “PLC transferred successfully”，并且控制器会自动启动（绿色 RUN LED 点亮）。
 如果向 MCU 传送程序时遇到问题，请将 MCU 切换到 STOP 位置（控制器将进入 bootloader 模式，绿色 “RUN” LED 应熄灭），然后再次按下 Transfer。
 重要：传送完成后，全部内部存储器（retain 数据、RTC 等）将被擦除。
@@ -176,7 +176,7 @@ Copy POU（复制 POU） - 可将 Function block 复制（粘贴）到 Function 
 Change POU Type To（将 POU 类型更改为） - 可将所选 Function 的 POU 类型更改为 Function block 或 Program，也可将 Function block 更改为 Program。
 Rename（重命名） - 重命名所选 Function block。
 Delete（删除） - 删除所选 Function block。
-提示：可将已复制 Function block 的内容（剪贴板）保存为文本文件，以便备份或在其他 LPC Manager 应用程序中使用。
+提示：可将已复制 Function block 的内容（剪贴板）保存为文本文件，以便备份或在其他 OpenPLCEditor 应用程序中使用。
 
 双击（Project name、DataTypes、Functions、Function Blocks、Programs 和 Resources）：
 - 双击任意数据类型或 POU，会在编辑器工作区中打开所选数据类型或 POU。
@@ -416,13 +416,13 @@ Debugger（调试器）可以以数值和图形方式显示所选变量的实际
 Search（搜索）—— Search 窗口显示来自 Edit（编辑）工具栏中 Search in Project（在项目中搜索）请求的结果。可选择自定义搜索模式和不同的搜索范围。
 
 ## 2.9 Console（控制台）
-Console（控制台）—— 包含 LPC Manager 在处理系统程序活动（build、transfer、debugging、communication 等）期间的活动日志。
+Console（控制台）—— 包含 OpenPLCEditor 在处理系统程序活动（build、transfer、debugging、communication 等）期间的活动日志。
 
 ## 2.10 PLC Log（PLC 日志）
 PLC Log（PLC 日志）—— 包含由 logger（日志）功能记录并存储在 MCU 上的日志数据。日志数据按级别类型过滤。级别类型由标志指示（error 标志 = 级别 0，warning 标志 = 级别 1，information 标志 = 级别 2，status 标志 = 级别 3）。
 
 # 3 编程语言
-LPC Manager 基于 PLC（可编程逻辑控制器）编程语言国际标准 IEC 61131-3。
+OpenPLCEditor 基于 PLC（可编程逻辑控制器）编程语言国际标准 IEC 61131-3。
 可使用以下类型的 PLC 编程语言：
 文本类：
 - IL Instruction List（指令表）
@@ -463,11 +463,11 @@ SFC 元素提供了一种将可编程控制器程序组织单元划分为一组�
 # 附录 B – 文档历史
 下表描述了本文档的所有变更。
 日期 | 版本 | 说明
-30.09.2011 | - | 初步版本，以 LPC Manager User Manual 形式发布。
+30.09.2011 | - | 初步版本，以 OpenPLCEditor User Manual 形式发布。
 30.01.2012 | 001 | 首次正式发布。
 30.06.2012 | 002 | 相对上一版本的变更。
 25.05.2014 | 003 | 根据 LPC Composer 5.0.1.32 新版本进行更新。
 22.01.2016 | 004 | 根据 LPC Smarteh IDE 5.1.4.2 新版本进行更新。
 
 # 译者说明
-本中文版为 OpenPLC Editor 仓库收录的英文用户手册（原 LPC Manager User Manual，基于 Beremiz）的简体中文翻译。界面截图仍请参考英文原版 PDF。技术标识符、标准编号与函数名保持英文原文。
+本中文版为 OpenPLC Editor 仓库收录的英文用户手册（原 OpenPLCEditor User Manual，基于 Beremiz）的简体中文翻译。界面截图仍请参考英文原版 PDF。技术标识符、标准编号与函数名保持英文原文。
