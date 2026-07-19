@@ -131,3 +131,6 @@ Set-Content -Path "$OutDir/README.txt" -Value $Readme -Encoding UTF8
 
 Write-Host "==> Portable folder ready: $OutDir"
 Get-ChildItem $OutDir | Format-Table Name, Mode
+
+# robocopy uses bitflag exit codes (0-7 = success). Reset so CI does not fail.
+exit 0
