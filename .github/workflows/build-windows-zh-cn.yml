@@ -1,0 +1,59 @@
+name: Build Windows zh_CN portable
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "win-zh-cn-*"
+    paths:
+      - "windows/**"
+      - "i18n/**"
+      - "patches/**"
+      - "apply_i18n_overrides.sh"
+      - ".github/workflows/build-windows-zh-cn.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Build portable package
+        shell: pwsh
+        run: |
+          ./windows/build_portable.ps1 -OutDir "dist/OpenPLC_Editor"
+
+      - name: Zip package
+        shell: pwsh
+        run: |
+          $name = "OpenPLC_Editor_zh_CN_Windows_portable"
+          Compress-Archive -Path "dist/OpenPLC_Editor" -DestinationPath "dist/$name.zip" -Force
+          Get-Item "dist/$name.zip" | Format-List Name, Length, FullName
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenPLC_Editor_zh_CN_Windows_portable
+          path: dist/OpenPLC_Editor_zh_CN_Windows_portable.zip
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish GitHub Release (tags only)
+        if: startsWith(github.ref, 'refs/tags/win-zh-cn-')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/OpenPLC_Editor_zh_CN_Windows_portable.zip
+          generate_release_notes: true
+          body: |
+            Portable Windows build with Simplified Chinese UI.
+
+            1. Extract the zip
+            2. Run `OpenPLC Editor.bat`
+            3. Set Windows language to 中文(简体) for Chinese menus
