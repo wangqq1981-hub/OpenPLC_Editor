@@ -71,6 +71,7 @@ coverage.xml
 *.pot
 # Keep prebuilt zh_CN catalog override for hosts without gettext/msgfmt.
 !i18n/zh_CN/LC_MESSAGES/Beremiz.mo
+!windows/i18n/zh_CN/LC_MESSAGES/Beremiz.mo
 
 # Django stuff:
 *.log
