@@ -2,21 +2,17 @@
 用户手册
 USER MANUAL
 OpenPLC Editor 用户手册
-（原文为基于 Beremiz 的 OpenPLCEditor / LONGO Programmable Controller）
-OpenPLCEditor
-版本 4
-Written by SMARTEH d.o.o.
-Copyright © 2010-2016, SMARTEH d.o.o.
-文档版本：4
-2016 年 1 月
+
+
+Copyright © 2026, 南京汇创电力科技有限公司
+文档版本：1
+2026 年 77 月
 
 # 1 关于本文档
 OpenPLCEditor 用户手册说明如何使用应用程序 OpenPLCEditor。
 
 ## 1.1 谁应阅读本文档
-如果您是 OpenPLCEditor 软件的新用户，希望入门使用，或正从先前版本升级，则应阅读本文档。
-为正确理解本文档，至少需要了解 LPC 硬件的基本知识。为此，强烈建议观看 LPC Getting Started 视频（随 LPC Smarteh IDE 安装包一并安装），或参加由经认证的 SMARTEH d.o.o. 培训师提供的正式培训。
-在该短期课程中，您将学习全部基础内容，并有机会成为经认证的 SMARTEH d.o.o. 集成商。您不仅能抢先掌握要点，还将加入不断壮大的 LPC 用户群体，有机会直接向专家提问，并与世界各地的其他集成商及公司建立联系……
+如果您是 OpenPLCEditor 软件的新用户，希望入门使用，则应阅读本文档。
 注意：由于 OpenPLCEditor 基于 IEC 61131-3 国际标准，更详细的信息请参阅 PLC（可编程逻辑控制器）编程语言国际标准 IEC 61131-3。
 
 ## 1.2 术语
@@ -44,12 +40,12 @@ NEW: — 用于标注相对先前版本变更最多的章节。
 
 # 2 OpenPLCEditor 软件
 ## 2.1 简介
-OpenPLCEditor 软件（LONGO Programmable Controller Manager software）用于对 Smarteh 控制器的 LPC-2 系列进行编程。
-在 LPC Smarteh IDE 中创建配置后，可通过以下方式启动 OpenPLCEditor：
-– 单击 Program（程序）按钮，或
-– 选择某个项目配置，然后单击 Program in OpenPLCEditor（在 OpenPLCEditor 中编程）命令行。
-本软件基于 Beremiz 开源软件，并针对 Smarteh LPC 控制器进行适配，支持 IEC 61131-3 标准编程语言：IL（指令表）、ST（结构化文本）、LD（梯形图）、FBD（功能块图）和 SFC（顺序功能图）。
-OpenPLCEditor 软件易于使用，并在 LPC 控制器应用软件的编程、调试、监视与趋势分析方面提供多种功能。
+OpenPLCEditor 软件用于对支持OpenPLC控制器进行编程。
+可通过以下方式启动 OpenPLCEditor：
+– 单击OpenPLC Editor.bat或其快捷方式启动软件。
+
+本软件基于 Beremiz 开源软件，并针对支持OpenPLC的控制器进行适配，支持 IEC 61131-3 标准编程语言：IL（指令表）、ST（结构化文本）、LD（梯形图）、FBD（功能块图）和 SFC（顺序功能图）。
+OpenPLCEditor 软件易于使用，并在OpenPLC控制器应用软件的编程、调试、监视与趋势分析方面提供多种功能。
 
 ## 2.2 OpenPLCEditor 编辑器
 OpenPLCEditor 软件由以下部分组成：
@@ -92,18 +88,20 @@ Zoom（缩放） - 窗口缩放设置（12 .. 800%）。
 Reset Perspective（重置透视图） - 将程序窗口重置为默认布局
 
 ### 2.3.4 Help（帮助）
-About（关于） - Beremiz 的主要信息。
+About（关于） -  OpenPLC Editor的主要信息。
 
 ## 2.4 工具栏
 Toolbar1（工具栏 1） - 标准 Windows 图标（Save、Print、Undo、Redo、Cut、Copy、Paste、Search in Project）。
-Toolbar2（工具栏 2） - 与 PLC 相关的执行功能（可用元素集取决于 USB 连接或仿真状态）。可在 Off-line（离线）模式、Simulation（仿真）模式、Application（应用）模式、Bootloader（引导加载程序）模式下使用。
+Toolbar2（工具栏 2） - 与 PLC 相关的执行功能。可在 Off-line（离线）模式、Simulation（仿真）模式、Application（应用）模式、Bootloader（引导加载程序）模式下使用。
 Toolbar3（工具栏 3） - 编辑器工作区元素的主要图形图标（可用元素集取决于所选编程语言）。
 
-Simulate PLC（仿真 PLC）：按下 “Simulate” 按钮，启动在 PC 上运行的 PLC 仿真。所有调试功能均受支持，与连接 LPC-2 控制器时的在线调试模式相同。
-Build project into build folder（将项目构建到 build 文件夹）：按下 “Build” 按钮开始构建项目。“Log Console” 会显示各个构建步骤。构建结果为可执行代码，名称与项目名称相同，位于项目的 build 目录中。
-Transfer PLC（传送 PLC）：本命令及后续命令仅在 PC 通过 USB 编程电缆连接到 LPC-2 控制器，且表示 USB 连通性的蓝色 LED 点亮时可用。按下 “Transfer” 按钮，将可执行应用程序代码传送到 LPC-2 控制器。
-Start PLC（启动 PLC）：当已连接 LPC-2 控制器上的操作模式开关处于 “RUN” 位置时，本命令可用。按下 “Run” 按钮后，控制器将开始执行应用程序。绿色 “RUN” LED 将点亮。
-Stop running PLC（停止正在运行的 PLC）：按下 “Stop” 按钮后，已连接的 LPC-2 控制器将停止全部 LPC-2 控制器进程。绿色 “RUN” LED 以及已连接模块的输出将进入关断状态。
+Start PLC Simulation（仿真PLC）：按下 “Simulate” 按钮，启动在 PC 上运行的 PLC 仿真。
+Generate Program For OpenPLC Runtime（将项目构建到 build 文件夹）：按下 “Build” 按钮开始构建项目。“Log Console” 会显示各个构建步骤。构建结果为可执行代码，名称与项目名称相同，位于项目的 build 目录中。
+Transfer Program to PLC（传送程序PLC）：本命令暂时不能使用。
+
+Live Debug Remote PLC（启动 PLC）：当已连接 LPC-2 控制器上的操作模式开关处于 “RUN” 位置时，本命令可用。按下 “Run” 按钮后，控制器将开始执行应用程序。绿色 “RUN” LED 将点亮。
+
+Stop running PLC（停止PLC）：按下 “Stop” 按钮后，已经运行的仿真PLC将停止仿真，已经连接并处理在线调试状态的PLC将中断调试。
 
 Toolbar3（工具栏 3）详情：
 Select an object（选择对象） - 在 POU 内选择一个或多个对象的标准工具。
@@ -123,24 +121,9 @@ Create a new divergence（创建新分支） - 在 POU 中插入分支。适用�
 Create a new jump（创建新跳转） - 在 POU 中插入跳转。适用于 SFC。
 
 ## 2.5 Project（项目）窗口
-Project window（项目窗口） - 由下文所述 Topology（拓扑）与 Project（项目）组成的一组窗口。
+Project window（项目窗口） - 由下文所述 Project（项目）相关窗口组成。
 
-### 2.5.1 Topology（拓扑）
-Topology（拓扑） - 表示当前控制器配置的全部变量，该配置由 LPC Smarteh IDE 软件组成。
-Project name（MC8）（项目名称） - 在 LPC Smarteh IDE 配置中定义的项目名称
-CanOpen - CANopen 变量与通信设置。
-Right（右侧） - 输入/输出模块变量。
-Left（左侧） - 网络模块变量。
-Devices（设备） - 智能外设模块变量
-On Board（板载） - MCU 板载变量。
-
-Build（构建） - Transfer（传送）流程：
-首次打开 OpenPLCEditor 时（针对对应的 LPC Smarteh IDE 配置），Toolbar 2 中提供两个按钮：Simulate 与 Build。在 POU 内创建所需应用程序后，必须对该应用程序进行构建。此过程可在 Console 窗口中观察。若代码无错误，则会在项目文件夹中生成相应文件。
-下一步是将生成的二进制代码传送到 LPC-2 控制器；控制器须通过 USB 编程电缆（USB A 型公头转 USB B 型公头）连接到 USB 端口。此时 USB 连通性（蓝色）LED 点亮，Toolbar 2 中会增加 Transfer 按钮，并且 Simulate 变为 Stop。单击 Transfer 按钮，并在 LOG console 窗口中观察进度。若一切正常，将报告消息 “PLC transferred successfully”，并且控制器会自动启动（绿色 RUN LED 点亮）。
-如果向 MCU 传送程序时遇到问题，请将 MCU 切换到 STOP 位置（控制器将进入 bootloader 模式，绿色 “RUN” LED 应熄灭），然后再次按下 Transfer。
-重要：传送完成后，全部内部存储器（retain 数据、RTC 等）将被擦除。
-
-### 2.5.2 Project（程序结构窗口）
+### 2.5.1 Project（程序结构窗口）
 Project（MC8） - 主项目属性与说明（Project、Author、Graphics、Miscellaneous）
 Data Types（数据类型） - 用户定义数据类型（Directly、Subrange、Enumerated、Array、Structure）。
 Functions（功能） - 用户定义 POU 功能（IL、ST、LD、FBD）
@@ -174,10 +157,10 @@ Delete（删除） - 删除所选 Function block。
 - 双击任意数据类型或 POU，会在编辑器工作区中打开所选数据类型或 POU。
 - 双击项目名称，会在编辑器工作区中打开 Config variables（配置变量）与 Project properties（项目属性）。
 
-### 2.5.3 Project（实例窗口）
+### 2.5.2 Project（实例窗口）
 Instances（实例） - 包含已构建并传送到目标 LPC-2 控制器的应用程序映像。用于在线图形调试模式下的图形化呈现。全部变量与内部逻辑连接均可在编辑工作区中以逻辑结构形式进行动画显示，也可在调试窗口列表中以数值形式显示，或在实时图形趋势窗口中显示。可通过单击眼镜图标启动调试。可将变量强制为所需数值。
 
-### 2.5.4 Editor workspace（编辑器工作区）
+### 2.5.3 Editor workspace（编辑器工作区）
 Editor workspace（编辑器工作区） - 用于对项目窗口中的全部元素（POU、数据类型、配置、资源、拓扑及其他变量、实例等）进行编辑、设置、编程与调试。编辑元素会在独立窗口中打开，与工作区中列出的那些元素分开显示。
 
 快捷键：
