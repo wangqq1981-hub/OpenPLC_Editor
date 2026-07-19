@@ -51,14 +51,16 @@ $Pth = Get-ChildItem "$OutDir/python/python*._pth" | Select-Object -First 1
     | Set-Content $Pth.FullName
 Add-Content $Pth.FullName "Lib\site-packages"
 
-# Install pip into embeddable Python
+# Install pip into embeddable Python (3.9-specific bootstrap URL)
 $GetPip = Join-Path $env:TEMP "get-pip.py"
-Invoke-WebRequest -Uri "https://bootstrap.pypa.io/get-pip.py" -OutFile $GetPip
+Invoke-WebRequest -Uri "https://bootstrap.pypa.io/pip/3.9/get-pip.py" -OutFile $GetPip
 & "$OutDir/python/python.exe" $GetPip --no-warn-script-location
+if ($LASTEXITCODE -ne 0) { throw "get-pip.py failed with exit $LASTEXITCODE" }
 
 $Py = "$OutDir/python/python.exe"
 Write-Host "==> Installing Python dependencies"
 & $Py -m pip install --upgrade pip wheel setuptools
+if ($LASTEXITCODE -ne 0) { throw "pip upgrade failed with exit $LASTEXITCODE" }
 # Match Linux install.sh runtime set + wxPython Windows wheel
 & $Py -m pip install `
     "wxPython==4.2.1" `
@@ -71,6 +73,11 @@ Write-Host "==> Installing Python dependencies"
     "pypubsub" `
     "Pyro5" `
     "attrdict3"
+if ($LASTEXITCODE -ne 0) { throw "pip install dependencies failed with exit $LASTEXITCODE" }
+
+# Smoke-test imports used at startup
+& $Py -c "import wx, lxml, jinja2; print('imports ok', wx.version())"
+if ($LASTEXITCODE -ne 0) { throw "import smoke test failed with exit $LASTEXITCODE" }
 
 Write-Host "==> Copying editor and matiec"
 robocopy "editor" "$OutDir/editor" /E /XD .git __pycache__ tests doc .github /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
