@@ -1052,7 +1052,7 @@ msgstr "清除构建目录\n"
 
 #: ../IDEFrame.py:439
 msgid "Clear Errors"
-msgstr "清楚错误"
+msgstr "清除错误"
 
 #: ../editors/Viewer.py:683
 msgid "Clear Execution Order"
