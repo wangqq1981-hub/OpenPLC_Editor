@@ -23,6 +23,12 @@ cd to the root of the project and then
 
 Download the installer from https://autonomylogic.com.
 
+## User Manual
+
+- English: [`OpenPLC_Editor_UserManual.pdf`](OpenPLC_Editor_UserManual.pdf)
+- 简体中文: [`OpenPLC_Editor_UserManual_zh_CN.pdf`](OpenPLC_Editor_UserManual_zh_CN.pdf)
+- Chinese source (Markdown): [`docs/OpenPLC_Editor_UserManual_zh_CN.md`](docs/OpenPLC_Editor_UserManual_zh_CN.md)
+
 ## To Run:
 
 ### linux
