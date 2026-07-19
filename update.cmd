@@ -9,6 +9,12 @@ if exist .\OpenPLC_Editor\editor\ (
   move .\OpenPLC_Editor\matiec\lib .\new_lib
   copy /y .\OpenPLC_Editor\revision .\
   rmdir /s /Q OpenPLC_Editor
+  if exist .\i18n\zh_CN\Beremiz_zh_CN.po (
+    if not exist .\new_editor\i18n\ mkdir .\new_editor\i18n
+    if not exist .\new_editor\locale\zh_CN\LC_MESSAGES\ mkdir .\new_editor\locale\zh_CN\LC_MESSAGES
+    copy /y .\i18n\zh_CN\Beremiz_zh_CN.po .\new_editor\i18n\Beremiz_zh_CN.po
+    copy /y .\i18n\zh_CN\LC_MESSAGES\Beremiz.mo .\new_editor\locale\zh_CN\LC_MESSAGES\Beremiz.mo
+  )
   echo "Update applied successfully"
 ) else (
   echo "Error cloning from repository!"
