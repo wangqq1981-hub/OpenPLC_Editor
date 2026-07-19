@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: Beremiz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-03 14:20+0300\n"
-"PO-Revision-Date: 2026-07-19 09:16+0000\n"
+"PO-Revision-Date: 2026-07-19 15:14+0000\n"
 "Last-Translator: Cursor Agent <cursor@cursor.com>, 2026\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/beremiz/teams/75746/zh_CN/)\n"
 "Language: zh_CN\n"
@@ -4756,3 +4756,24 @@ msgstr "断开延迟定时器能被用来延迟设置一个输出为FALSE，当�
 #: BeremizIDE.py:258
 msgid "&Tutorials and Examples"
 msgstr "&教程与示例"
+
+msgid "Start PLC Simulation"
+msgstr "启动 PLC 仿真"
+
+msgid "Transfer program to PLC"
+msgstr "传输程序到 PLC"
+
+msgid "Transfer Program to PLC"
+msgstr "传输程序到 PLC"
+
+msgid "Live debug remote PLC"
+msgstr "远程在线调试 PLC"
+
+msgid "Upload Arduino"
+msgstr "上传 Arduino"
+
+msgid "Debug PLC"
+msgstr "调试 PLC"
+
+msgid "Generate program for OpenPLC Runtime"
+msgstr "为 OpenPLC Runtime 生成程序"
