@@ -86,13 +86,50 @@ if ($LASTEXITCODE -ge 8) { throw "robocopy editor failed: $LASTEXITCODE" }
 robocopy "matiec/lib" "$OutDir/matiec/lib" /E /XD .git __pycache__ /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
 if ($LASTEXITCODE -ge 8) { throw "robocopy matiec/lib failed: $LASTEXITCODE" }
 
+# ProjectController looks for matiec\iec2c.exe (not arduino\bin)
+$Iec2cSrc = "editor/arduino/bin/iec2c.exe"
+if (-not (Test-Path $Iec2cSrc)) { throw "Missing $Iec2cSrc" }
+Copy-Item $Iec2cSrc "$OutDir/matiec/iec2c.exe" -Force
+
 Copy-Item "revision" "$OutDir/revision" -Force
 Copy-Item "LICENSE" "$OutDir/LICENSE" -Force -ErrorAction SilentlyContinue
+
+# MinGW/GCC required for Win32 C build (BeremizIDE adds .\mingw\bin to PATH)
+# Use zip (not 7z) so Expand-Archive works without extra tools.
+$MingwUrl = "https://github.com/brechtsanders/winlibs_mingw/releases/download/16.1.0posix-14.0.0-ucrt-r3/winlibs-x86_64-posix-seh-gcc-16.1.0-mingw-w64ucrt-14.0.0-r3.zip"
+$MingwArchive = Join-Path $env:TEMP "winlibs-mingw64.zip"
+$MingwExtract = Join-Path $env:TEMP "winlibs-mingw64-extract"
+Write-Host "==> Downloading MinGW-w64 (winlibs zip)"
+Invoke-WebRequest -Uri $MingwUrl -OutFile $MingwArchive
+if (Test-Path $MingwExtract) { Remove-Item -Recurse -Force $MingwExtract }
+Expand-Archive -Path $MingwArchive -DestinationPath $MingwExtract -Force
+
+$MingwRoot = Get-ChildItem $MingwExtract -Directory | Where-Object {
+    Test-Path (Join-Path $_.FullName "bin\gcc.exe")
+} | Select-Object -First 1
+
+if (-not $MingwRoot) {
+    # Sometimes nested one extra level
+    $MingwRoot = Get-ChildItem $MingwExtract -Directory -Recurse -Depth 2 | Where-Object {
+        Test-Path (Join-Path $_.FullName "bin\gcc.exe")
+    } | Select-Object -First 1
+}
+if (-not $MingwRoot) { throw "gcc.exe not found inside winlibs archive" }
+
+Write-Host "==> Installing MinGW from $($MingwRoot.FullName)"
+New-Item -ItemType Directory -Force -Path "$OutDir/mingw" | Out-Null
+robocopy $MingwRoot.FullName "$OutDir/mingw" /E /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+if ($LASTEXITCODE -ge 8) { throw "robocopy mingw failed: $LASTEXITCODE" }
+if (-not (Test-Path "$OutDir/mingw/bin/gcc.exe")) { throw "mingw\\bin\\gcc.exe missing after copy" }
+
+& "$OutDir/mingw/bin/gcc.exe" --version
+if ($LASTEXITCODE -ne 0) { throw "gcc smoke test failed" }
 
 # Launcher matching official style
 $Bat = @"
 @echo off
 cd /d "%~dp0"
+set "PATH=%CD%\mingw\bin;%CD%\matiec;%PATH%"
 set "LANG=zh_CN.UTF-8"
 set "LC_ALL=zh_CN.UTF-8"
 set "LANGUAGE=zh_CN"
@@ -120,12 +157,14 @@ How to run
 2. Double-click "OpenPLC Editor.bat".
 3. For Chinese UI, set Windows display language to 中文(简体).
 
+Included for C build
+--------------------
+- mingw\bin\gcc.exe (winlibs MinGW-w64)
+- matiec\iec2c.exe and matiec\lib
+
 Notes
 -----
 - Arduino board cores are downloaded on first compile for that board.
-- Full PLC native toolchain (mingw) from the official Autonomy package is
-  not fully redistributed here. UI editing works; some compile targets may
-  need the official mingw folder copied into this directory as mingw\bin.
 "@
 Set-Content -Path "$OutDir/README.txt" -Value $Readme -Encoding UTF8
 
