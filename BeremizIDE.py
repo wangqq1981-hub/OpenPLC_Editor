@@ -84,12 +84,6 @@ from IDEFrame import \
 
 from LocalRuntimeMixin import LocalRuntimeMixin
 
-# Define OpenPLC Editor FileMenu extra items id
-[
-    ID_OPENPLCFILEMENUUPDATE
-] = [wx.NewId() for _init_coll_FileMenu_Items in range(1)]
-
-
 def AppendMenu(parent, help, id, kind, text):
     return parent.Append(wx.MenuItem(helpString=help, id=id, kind=kind, text=text))
 
@@ -293,9 +287,6 @@ class Beremiz(IDEFrame, LocalRuntimeMixin):
         AppendMenu(parent, help='', id=wx.ID_PRINT,
                    kind=wx.ITEM_NORMAL, text=_('Print') + '\tCTRL+P')
         parent.AppendSeparator()
-        AppendMenu(parent, help='', id=ID_OPENPLCFILEMENUUPDATE,
-                   kind=wx.ITEM_NORMAL, text=_(u'Check for updates...') + '\tCTRL+U')
-        parent.AppendSeparator()
         AppendMenu(parent, help='', id=wx.ID_EXIT,
                    kind=wx.ITEM_NORMAL, text=_('Quit') + '\tCTRL+Q')
 
@@ -308,7 +299,6 @@ class Beremiz(IDEFrame, LocalRuntimeMixin):
         self.Bind(wx.EVT_MENU, self.OnPageSetupMenu, id=wx.ID_PAGE_SETUP)
         self.Bind(wx.EVT_MENU, self.OnPreviewMenu, id=wx.ID_PREVIEW)
         self.Bind(wx.EVT_MENU, self.OnPrintMenu, id=wx.ID_PRINT)
-        self.Bind(wx.EVT_MENU, self.OnUpdateMenu, id=ID_OPENPLCFILEMENUUPDATE)
         self.Bind(wx.EVT_MENU, self.OnQuitMenu, id=wx.ID_EXIT)
 
         self.AddToMenuToolBar([(wx.ID_NEW, "new", _('New'), None),

@@ -42,7 +42,7 @@ from editors.DataTypeEditor import DataTypeEditor
 from PLCControler import *
 from controls import CustomTree, LibraryPanel, PouInstanceVariablesPanel, SearchResultPanel
 from controls.DebugVariablePanel import DebugVariablePanel
-from dialogs import ProjectDialog, PouDialog, PouTransitionDialog, PouActionDialog, FindInPouDialog, SearchInProjectDialog, EditorUpdateDialog
+from dialogs import ProjectDialog, PouDialog, PouTransitionDialog, PouActionDialog, FindInPouDialog, SearchInProjectDialog
 from util.BitmapLibrary import GetBitmap
 from plcopen.types_enums import *
 
@@ -1143,10 +1143,6 @@ class IDEFrame(wx.Frame):
                 self.ShowErrorMessage(_("There was a problem printing.\nPerhaps your current printer is not set correctly?"))
             printout.Destroy()
 
-    def OnUpdateMenu(self, event):
-        dialog = EditorUpdateDialog.EditorUpdateDialog(self)
-        dialog.ShowModal()
-    
     def OnPropertiesMenu(self, event):
         self.EditProjectSettings()
 
